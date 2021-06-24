@@ -3,6 +3,8 @@
 A demo application shows Simple BFF (Backends For Frontends) with [Cloud Run](https://cloud.google.com/run).  
 The requests from BFF go through [Serverless VPC Access](https://cloud.google.com/vpc/docs/configure-serverless-vpc-access) and your VPC, internally reach out to Backend APIs.
 
+![architecture](https://storage.googleapis.com/handson-images/simple-bff-image.png)
+
 ## How to use
 ### 1. Preparation
 
