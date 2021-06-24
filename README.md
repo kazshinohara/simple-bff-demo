@@ -148,6 +148,8 @@ export BFF_URL=$(gcloud run services describe bff --format json | jq -r '.status
 If you could see the following output, it indicates that BFF talks with Backends via the connector.
 ```shell
 curl -X GET ${BFF_URL}/bff | jq
+```
+```shell
 {
   "backend_a_version": "v1",
   "backend_b_version": "v1",
