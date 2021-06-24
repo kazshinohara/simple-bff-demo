@@ -59,7 +59,7 @@ cd ../bff
 gcloud builds submit --tag ${REGION_NAME}-docker.pkg.dev/${PROJECT_ID}/${REPO_NAME}/bff:v1
 ```
 
-### 2. Prepare Serverless VPC Access Connector
+### 3. Prepare Serverless VPC Access Connector
 
 
 Create a subnet in your VPC, which will be used by Serverless VPC Connector.   
@@ -87,7 +87,7 @@ gcloud compute networks vpc-access connectors describe bff-internal \
 --region ${REGION_NAME}
 ```
 
-### 3. Deploy containers to Cloud Run (fully managed)
+### 4. Deploy containers to Cloud Run (fully managed)
 Set Cloud Run's base configuration.
 ```bash
 gcloud config set run/region ${REGION_NAME}
@@ -146,7 +146,7 @@ Get BFF's URL
 export BFF_URL=$(gcloud run services describe bff --format json | jq -r '.status.address.url')
 ```
 
-### 4. Check behavior
+### 5. Check behavior
 If you could see the following output, it indicates that BFF talks with Backends via the connector.
 ```shell
 curl -X GET ${BFF_URL}/bff | jq
