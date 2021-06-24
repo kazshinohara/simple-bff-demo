@@ -42,10 +42,10 @@ Note: please make your own [Artifact Registry repo](https://cloud.google.com/art
 
 #### Build Backend image
 ```shell
-git clone git@github.com:kazshinohara/simple-bff.git
+git clone git@github.com:kazshinohara/simple-bff-demo.git
 ```
 ```shell
-cd simple-bff/backend
+cd simple-bff-demo/backend
 ```
 ```shell
 gcloud builds submit --tag ${REGION_NAME}-docker.pkg.dev/${PROJECT_ID}/${REPO_NAME}/backend:v1
