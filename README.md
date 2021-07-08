@@ -34,7 +34,8 @@ gcloud services enable \
   run.googleapis.com \
   artifactregistry.googleapis.com \
   cloudbuild.googleapis.com \
-  vpcaccess.googleapis.com
+  vpcaccess.googleapis.com \
+  cloudtrace.googleapis.com
 ```
 
 ### 2. build container images
@@ -158,3 +159,9 @@ curl -X GET ${BFF_URL}/bff | jq
   "backend_c_version": "v1"
 }
 ```
+
+In the end, let's see tracing information via [Cloud Console](https://console.cloud.google.com/traces/list).  
+This sample application has [Cloud Trace](https://cloud.google.com/trace) integration, you can see the span between bff and backends like below.
+![Trace_list](https://storage.googleapis.com/handson-images/simple-bff-trace.png)
+
+
