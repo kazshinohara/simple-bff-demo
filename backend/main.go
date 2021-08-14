@@ -1,16 +1,17 @@
 package main
 
 import (
-	"contrib.go.opencensus.io/exporter/stackdriver"
 	"encoding/json"
-	"github.com/gorilla/mux"
-	"go.opencensus.io/plugin/ochttp"
-	"go.opencensus.io/plugin/ochttp/propagation/tracecontext"
-	"go.opencensus.io/trace"
 	"log"
 	"net/http"
 	"os"
 	"time"
+
+	"contrib.go.opencensus.io/exporter/stackdriver"
+	"github.com/gorilla/mux"
+	"go.opencensus.io/plugin/ochttp"
+	"go.opencensus.io/plugin/ochttp/propagation/tracecontext"
+	"go.opencensus.io/trace"
 )
 
 var (
@@ -69,7 +70,7 @@ func main() {
 		Propagation: &tracecontext.HTTPFormat{},
 	}
 	er := http.ListenAndServe(":"+port, handler)
-	if err != nil {
+	if er != nil {
 		log.Fatal("ListenAndServer: ", er)
 	}
 }
